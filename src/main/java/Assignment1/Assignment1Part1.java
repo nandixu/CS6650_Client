@@ -76,11 +76,11 @@ public class Assignment1Part1 {
             end_time = System.currentTimeMillis();
             System.out.println("End Time: " + end_time);
             total_time = end_time - start_time;
-            throughput = total_time / INITIAL_THREADS_AMOUNT;
+            throughput = (LIFT_RIDE_EVENTS_AMOUNT) / total_time;
             System.out.println("Total Time consumed: " + total_time + "ms.");
             System.out.println("Successful Thread Count: " + successful_thread_count);
             System.out.println("Failed Thread Count: " + failed_thread_count);
-            System.out.println("Throughput: " + throughput + "ms/thread");
+            System.out.println("Throughput: " + throughput + " requests/ms");
             System.out.println("-------------------------");
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
