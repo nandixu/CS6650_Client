@@ -1,4 +1,4 @@
-package Assignment1;
+package Assignment1.Part2ReportGeneration;
 
 public class ResponseSummary {
 

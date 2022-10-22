@@ -1,4 +1,4 @@
-package Assignment1;
+package Assignment1.model;
 
 import java.util.Random;
 

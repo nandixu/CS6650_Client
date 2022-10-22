@@ -1,5 +1,7 @@
 package Assignment1;
 
+import Assignment1.model.RandomSkier;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -31,7 +33,6 @@ public class ThreadDoPost implements Runnable{
             RandomSkier skier;
             int count = 0;
             while (!(skier = lift_events.take()).getExit()) {
-                System.out.println("Posted :" + skier.getSkierID());
                 doPost(skier);
                 count ++;
 

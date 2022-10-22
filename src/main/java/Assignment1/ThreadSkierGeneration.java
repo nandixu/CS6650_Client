@@ -1,6 +1,7 @@
 package Assignment1;
 
-import java.util.Random;
+import Assignment1.model.RandomSkier;
+
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 
