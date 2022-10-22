@@ -24,3 +24,7 @@ This is a thread that would randomly generate 200k lift events.
 
 Please ignore Lab3 and HttpClientTutorial class. I used the template to learn
 HttpClient operations. 
+
+
+### ScreenShot of Part1 and Part2
+![P1andP2](https://media.github.khoury.northeastern.edu/user/8909/files/c1817003-bfa5-4168-b004-b173a4125f2e)
