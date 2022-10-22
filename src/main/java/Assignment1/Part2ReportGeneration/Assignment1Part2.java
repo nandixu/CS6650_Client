@@ -14,11 +14,14 @@ public class Assignment1Part2 {
 
     public Assignment1Part2(BlockingQueue<String[]> result_data) {
         ResponseSummary summary = parse_result_data(result_data);
+        System.out.println("Part 2 result: ");
         System.out.println("Mean Response Time: " + summary.getMean_response_time() + "ms.");
         System.out.println("Median Response Time: " + summary.getMedian_response_time() + "ms.");
         System.out.println("P99: " + summary.getP99() + "ms.");
         System.out.println("Min Response Time: " + summary.getMin_response_time() + "ms.");
         System.out.println("Max Response Time: " + summary.getMax_response_time() + "ms.");
+        System.out.println("Please refer to Part1 for Throughput data.");
+        System.out.println("-------------------------");
 
         String filePath = new String("D://result.csv");
         File file = new File(filePath);

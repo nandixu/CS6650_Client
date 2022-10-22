@@ -26,6 +26,8 @@ public class Assignment1Part1 {
         long throughput;
 
         // print out start time.
+        System.out.println("-------------------------");
+        System.out.println("Part 1 result: ");
         System.out.println("Start Time: " + start_time);
 
         // define lift ride events variables.
@@ -54,9 +56,18 @@ public class Assignment1Part1 {
         ThreadDoPost skier_doPost = new ThreadDoPost(queue, result_data, countDownLatch);
 
         // begin both threads.
+        int successful_thread_count = 0;
+        int failed_thread_count = 0;
         new Thread(skier_generation).start();
         for (int i=0; i<INITIAL_THREADS_AMOUNT + MORE_THREADS_AMOUNT; i++) {
-            new Thread(skier_doPost).start();
+
+            try{
+                new Thread(skier_doPost).start();
+                successful_thread_count ++;
+            }catch (Exception e) {
+                failed_thread_count ++;
+                System.out.println(e.getMessage());
+            }
         }
 
         // command CountDownLatch to await until all threads die.
@@ -67,7 +78,10 @@ public class Assignment1Part1 {
             total_time = end_time - start_time;
             throughput = total_time / INITIAL_THREADS_AMOUNT;
             System.out.println("Total Time consumed: " + total_time + "ms.");
+            System.out.println("Successful Thread Count: " + successful_thread_count);
+            System.out.println("Failed Thread Count: " + failed_thread_count);
             System.out.println("Throughput: " + throughput + "ms/thread");
+            System.out.println("-------------------------");
         } catch (InterruptedException e) {
             System.out.println(e.getMessage());
         }
