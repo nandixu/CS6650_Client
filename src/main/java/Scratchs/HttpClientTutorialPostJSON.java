@@ -1,9 +1,20 @@
+package Scratchs;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.junit.Test;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import static org.junit.Assert.assertThat;
 
 public class HttpClientTutorialPostJSON {
 
@@ -50,6 +61,22 @@ public class HttpClientTutorialPostJSON {
         // print response body
         System.out.println(response.body());
 
+    }
+
+    @Test
+    public static void whenPostJsonUsingHttpClient_thenCorrect()
+            throws ClientProtocolException, IOException {
+        CloseableHttpClient client = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost("http://www.example.com");
+
+        String json = "{\"id\":1,\"name\":\"John\"}";
+        StringEntity entity = new StringEntity(json);
+        httpPost.setEntity(entity);
+        httpPost.setHeader("Accept", "application/json");
+        httpPost.setHeader("Content-type", "application/json");
+
+        CloseableHttpResponse response = client.execute(httpPost);
+        client.close();
     }
 
 }

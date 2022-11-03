@@ -22,7 +22,7 @@ This is a thread class that would make 1000 post, and end when there is an
 This is a thread that would randomly generate 200k lift events.
 
 
-Please ignore Lab3 and HttpClientTutorial class. I used the template to learn
+Please ignore Scratchs.Lab3 and HttpClientTutorial class. I used the template to learn
 HttpClient operations. 
 
 

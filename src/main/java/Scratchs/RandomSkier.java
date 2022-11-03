@@ -1,3 +1,5 @@
+package Scratchs;
+
 import java.util.Random;
 
 public class RandomSkier {
